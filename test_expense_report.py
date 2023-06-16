@@ -32,8 +32,8 @@ def test_print_empty(report, printer):
         --------------
         Meal Total: 0.00
         Total: 0.00
-    """)
-    assert printer.text == expected_output.lstrip()
+    """).lstrip()
+    assert printer.text == expected_output
 
 
 def test_print_one_dinner(report, printer):
@@ -47,8 +47,8 @@ def test_print_one_dinner(report, printer):
         --------------
         Meal Total: 33.00
         Total: 33.00
-    """)
-    assert printer.text == expected_output.lstrip()
+    """).lstrip()
+    assert printer.text == expected_output
 
 
 def test_print_two_meals_and_dinner_over(report, printer):
@@ -64,8 +64,8 @@ def test_print_two_meals_and_dinner_over(report, printer):
         --------------
         Meal Total: 76.50
         Total: 76.50
-    """)
-    assert printer.text == expected_output.lstrip()
+    """).lstrip()
+    assert printer.text == expected_output
 
 
 def test_print_mix_and_dinner_over(report, printer):
@@ -83,5 +83,5 @@ def test_print_mix_and_dinner_over(report, printer):
         --------------
         Meal Total: 76.00
         Total: 110.50
-    """)
-    assert printer.text == expected_output.lstrip()
+    """).lstrip()
+    assert printer.text == expected_output
