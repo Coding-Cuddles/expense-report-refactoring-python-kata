@@ -7,7 +7,7 @@
 
 This kata complements [Clean Code: SOLID, Ep. 10 - Open-Closed Principle](https://cleancoders.com/episode/clean-code-episode-10).
 
-In this exercise, you'll practice refactoring code to adhere to the Open-CLose
+In this exercise, you'll practice refactoring code to adhere to the Open-Close
 Principle (OCP). You'll be working with an expense report system that tracks
 different types of expenses and prints a final report.
 
