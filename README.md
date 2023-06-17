@@ -33,25 +33,43 @@ by just looking at the output of the program.
 When you're done with refactoring, test the quality of your refactoring by
 implementing two additional scenarios:
 
-1. Extend our system to handle two more types of expenses:
+1. Extend our system to handle two more types of expenses.
 
     1. **Transportation**. Surcharge: 5% of the expense amount.
     2. **Supplies**. Surcharge: No surcharge.
 
-2. Add dynamic surcharge based on day of week
+2. Add dynamic surcharge based on day of week.
 
-    1. For dinners on weekends, the surcharge is 15% of the expense amount.
-    2. For breakfasts on weekends, the surcharge is 10% of the expense amount.
-    3. On weekdays, the surcharges remain the same as before (10% for Dinner
-       and 5% for Breakfast).
+    Your task is to modify the system to apply the correct surcharge depending
+    on the type of expense and the day of the week. The report should correctly
+    calculate and display the amount for each expense, including the surcharge.
+
+    * For dinners on weekends, the surcharge is 15% of the expense amount.
+    * For breakfasts on weekends, the surcharge is 10% of the expense amount.
+    * On weekdays, the surcharges remain the same as before (10% for dinner
+      and 5% for breakfast).
 
     You'll need to add a `date` field to the `Expense` class to support this
-    requirement. The date should be the date when the expense occurred. You can
-    use the `datetime` module in Python to work with dates.
+    requirement. The date should be the date when the expense occurred.
 
-Your task is to modify the system to apply the correct surcharge depending on
-the type of expense and the day of the week. The report should correctly
-calculate and display the amount for each expense, including the surcharge.
+    > **Note**
+    >
+    > You can use the `datetime` module in Python to work with dates, and you
+    > can determine if a date is a weekend by using the following function:
+    >
+    > ```python
+    > from datetime import datetime
+    >
+    >
+    > def is_weekend(date_str):
+    >     date = datetime.strptime(date_str, '%Y-%m-%d')
+    >     day_of_week = date.weekday()
+    >     # If day of week is 5 or 6 (Saturday or Sunday), it's a weekend
+    >     return day_of_week >= 5
+    >
+    > date_str = "2023-06-17"  # this is a Saturday
+    > print(is_weekend(date_str))  # this should print: True
+    > ```
 
 ## Usage
 
