@@ -55,10 +55,11 @@ class ExpenseReport:
             if expense.type == ExpenseType.DINNER or expense.type == ExpenseType.BREAKFAST:
                 meal_total += expense.amount + surcharge
 
-            meal_over_expenses_marker = ("X" if (
-                expense.type == ExpenseType.DINNER and expense.amount > 5000
-            ) or (expense.type == ExpenseType.BREAKFAST
-                  and expense.amount > 1000) else "")
+            meal_over_expenses_marker = ("X" if
+                                         (expense.type == ExpenseType.DINNER
+                                          and expense.amount > 5000) or
+                                         (expense.type == ExpenseType.BREAKFAST
+                                          and expense.amount > 1000) else "")
 
             printer.print(
                 f"{name}\t{expense.amount / 100:.2f}\t{meal_over_expenses_marker}"
