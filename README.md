@@ -40,16 +40,12 @@ implementing two additional scenarios:
 
 2. Add dynamic surcharge based on day of week.
 
-    Your task is to modify the system to apply the correct surcharge depending
-    on the type of expense and the day of the week. The report should correctly
-    calculate and display the amount for each expense, including the surcharge.
-
     * For dinners on weekends, the surcharge is 15% of the expense amount.
     * For breakfasts on weekends, the surcharge is 10% of the expense amount.
     * On weekdays, the surcharges remain the same as before (10% for dinner
       and 5% for breakfast).
 
-    You'll need to add a `date` field to the `Expense` class to support this
+    You may need to add a `date` field to the `Expense` class to support this
     requirement. The date should be the date when the expense occurred.
 
     > **Note**
@@ -62,7 +58,7 @@ implementing two additional scenarios:
     >
     >
     > def is_weekend(date_str):
-    >     date = datetime.strptime(date_str, '%Y-%m-%d')
+    >     date = datetime.strptime(date_str, "%Y-%m-%d")
     >     day_of_week = date.weekday()
     >     # If day of week is 5 or 6 (Saturday or Sunday), it's a weekend
     >     return day_of_week >= 5
