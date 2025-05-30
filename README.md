@@ -1,7 +1,6 @@
 # Expense Report Refactoring Python Kata
 
 [![CI](https://github.com/Coding-Cuddles/expense-report-refactoring-python-kata/actions/workflows/main.yml/badge.svg)](https://github.com/Coding-Cuddles/expense-report-refactoring-python-kata/actions/workflows/main.yml)
-[![Replit](https://replit.com/badge?caption=Try%20with%20Replit&variant=small)](https://replit.com/new/github/Coding-Cuddles/expense-report-refactoring-python-kata)
 
 ## Overview
 
@@ -35,53 +34,44 @@ implementing two additional scenarios:
 
 1. Extend our system to handle two more types of expenses.
 
-    1. **Transportation**. Surcharge: 5% of the expense amount.
-    2. **Supplies**. Surcharge: No surcharge.
+   1. **Transportation**. Surcharge: 5% of the expense amount.
+   2. **Supplies**. Surcharge: No surcharge.
 
 2. Add dynamic surcharge based on day of week.
 
-    * For dinners on weekends, the surcharge is 15% of the expense amount.
-    * For breakfasts on weekends, the surcharge is 10% of the expense amount.
-    * On weekdays, the surcharges remain the same as before (10% for dinner
-      and 5% for breakfast).
+   - For dinners on weekends, the surcharge is 15% of the expense amount.
+   - For breakfasts on weekends, the surcharge is 10% of the expense amount.
+   - On weekdays, the surcharges remain the same as before (10% for dinner
+     and 5% for breakfast).
 
-    You may need to add a `date` field to the `Expense` class to support this
-    requirement. The date should be the date when the expense occurred.
+   You may need to add a `date` field to the `Expense` class to support this
+   requirement. The date should be the date when the expense occurred.
 
-    > **Note**
-    >
-    > You can use the `datetime` module in Python to work with dates, and you
-    > can determine if a date is a weekend by using the following function:
-    >
-    > ```python
-    > from datetime import datetime
-    >
-    >
-    > def is_weekend(date_str):
-    >     date = datetime.strptime(date_str, "%Y-%m-%d")
-    >     day_of_week = date.weekday()
-    >     # If day of week is 5 or 6 (Saturday or Sunday), it's a weekend
-    >     return day_of_week >= 5
-    >
-    > date_str = "2023-06-17"  # this is a Saturday
-    > print(is_weekend(date_str))  # this should print: True
-    > ```
+   > [!NOTE]
+   >
+   > You can use the `datetime` module in Python to work with dates, and you
+   > can determine if a date is a weekend by using the following function:
+   >
+   > ```python
+   > from datetime import datetime
+   >
+   >
+   > def is_weekend(date_str):
+   >     date = datetime.strptime(date_str, "%Y-%m-%d")
+   >     day_of_week = date.weekday()
+   >     # If day of week is 5 or 6 (Saturday or Sunday), it's a weekend
+   >     return day_of_week >= 5
+   >
+   > date_str = "2023-06-17"  # this is a Saturday
+   > print(is_weekend(date_str))  # this should print: True
+   > ```
+
+## Prerequisites
+
+- [Python 3.8+](https://www.python.org/)
+- [pytest](https://pytest.org)
 
 ## Usage
-
-You can import this project into [Replit](https://replit.com), and it will
-handle all dependencies automatically.
-
-### Prerequisites
-
-* [Python 3.8+](https://www.python.org/)
-* [pytest](https://pytest.org)
-
-### Run main
-
-```console
-make run
-```
 
 ### Run tests
 

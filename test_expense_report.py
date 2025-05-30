@@ -5,7 +5,6 @@ from expense_report import ExpenseReport, Expense, ExpenseType, ReportPrinter
 
 
 class MockReportPrinter(ReportPrinter):
-
     def __init__(self):
         self.text = ""
 
