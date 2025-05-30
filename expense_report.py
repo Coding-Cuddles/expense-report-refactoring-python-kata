@@ -3,7 +3,6 @@ from enum import Enum, auto
 
 
 class ReportPrinter(ABC):
-
     @abstractmethod
     def print(self, text):
         pass
@@ -16,14 +15,12 @@ class ExpenseType(Enum):
 
 
 class Expense:
-
     def __init__(self, type, amount):
         self.type = type
         self.amount = amount
 
 
 class ExpenseReport:
-
     def __init__(self):
         self.expenses = []
 
@@ -55,15 +52,14 @@ class ExpenseReport:
             if expense.type == ExpenseType.DINNER or expense.type == ExpenseType.BREAKFAST:
                 meal_total += expense.amount + surcharge
 
-            meal_over_expenses_marker = ("X" if
-                                         (expense.type == ExpenseType.DINNER
-                                          and expense.amount > 5000) or
-                                         (expense.type == ExpenseType.BREAKFAST
-                                          and expense.amount > 1000) else "")
-
-            printer.print(
-                f"{name}\t{expense.amount / 100:.2f}\t{meal_over_expenses_marker}"
+            meal_over_expenses_marker = (
+                "X"
+                if (expense.type == ExpenseType.DINNER and expense.amount > 5000)
+                or (expense.type == ExpenseType.BREAKFAST and expense.amount > 1000)
+                else ""
             )
+
+            printer.print(f"{name}\t{expense.amount / 100:.2f}\t{meal_over_expenses_marker}")
 
         printer.print("--------------")
         printer.print(f"Meal Total: {meal_total / 100:.2f}")
