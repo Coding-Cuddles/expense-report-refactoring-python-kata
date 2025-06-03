@@ -47,24 +47,24 @@ implementing two additional scenarios:
    You may need to add a `date` field to the `Expense` class to support this
    requirement. The date should be the date when the expense occurred.
 
-   > [!NOTE]
-   >
-   > You can use the `datetime` module in Python to work with dates, and you
-   > can determine if a date is a weekend by using the following function:
-   >
-   > ```python
-   > from datetime import datetime
-   >
-   >
-   > def is_weekend(date_str):
-   >     date = datetime.strptime(date_str, "%Y-%m-%d")
-   >     day_of_week = date.weekday()
-   >     # If day of week is 5 or 6 (Saturday or Sunday), it's a weekend
-   >     return day_of_week >= 5
-   >
-   > date_str = "2023-06-17"  # this is a Saturday
-   > print(is_weekend(date_str))  # this should print: True
-   > ```
+> [!TIP]
+>
+> You can use the `datetime` module in Python to work with dates, and you
+> can determine if a date is a weekend by using the following function:
+>
+> ```python
+> from datetime import datetime
+>
+>
+> def is_weekend(date_str):
+>     date = datetime.strptime(date_str, "%Y-%m-%d")
+>     day_of_week = date.weekday()
+>     # If day of week is 5 or 6 (Saturday or Sunday), it's a weekend
+>     return day_of_week >= 5
+>
+> date_str = "2023-06-17"  # this is a Saturday
+> print(is_weekend(date_str))  # this should print: True
+> ```
 
 ## Prerequisites
 
